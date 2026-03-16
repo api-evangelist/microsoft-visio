@@ -1,3 +1,4 @@
+aid: microsoft-visio
 name: Microsoft Visio
 description: APIs and resources for Microsoft Visio, a diagramming and vector graphics application that helps visualize data-connected business process flows.
 image: https://www.microsoft.com/en-us/microsoft-365/visio/microsoft-visio
@@ -8,9 +9,9 @@ tags:
 - Flowcharts
 - Microsoft 365
 created: '2024'
-modified: '2024'
-url: https://www.microsoft.com/en-us/microsoft-365/visio
-specificationVersion: '0.18'
+modified: '2026-03-16'
+url: https://raw.githubusercontent.com/api-evangelist/microsoft-visio/refs/heads/main/apis.yml
+specificationVersion: '0.19'
 apis:
 - name: Microsoft Graph Visio API
   description: REST API to access and interact with Visio files stored in SharePoint Online and OneDrive for Business
@@ -70,9 +71,8 @@ apis:
     url: https://learn.microsoft.com/en-us/previous-versions/office/developer/sharepoint-rest-reference/jj245846(v=office.15)
 include: []
 maintainers:
-- name: Microsoft
-  email: support@microsoft.com
-  url: https://www.microsoft.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 common:
 - type: Support
   url: https://support.microsoft.com/visio
