@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/microsoft-visio/refs/heads/main/json-schema/visio-graph-api-visio-hyperlink-schema.json",
+  "title": "VisioHyperlink",
+  "description": "Represents a hyperlink associated with a shape.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Unique identifier for the hyperlink." },
+    "address": { "type": "string", "format": "uri", "description": "The URL target of the hyperlink." },
+    "description": { "type": "string", "description": "Description of the hyperlink." },
+    "subAddress": { "type": "string", "description": "Sub-address target within the document." }
+  }
+}

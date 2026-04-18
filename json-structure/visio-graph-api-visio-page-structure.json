@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/microsoft-visio/refs/heads/main/json-structure/visio-graph-api-visio-page-structure.json",
+  "name": "VisioPage",
+  "description": "Represents a page in a Visio document.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Unique identifier for the page." },
+    "name": { "type": "string", "description": "The name of the page." },
+    "index": { "type": "int32", "description": "Zero-based index of the page." },
+    "height": { "type": "double", "description": "Height of the page in points." },
+    "width": { "type": "double", "description": "Width of the page in points." }
+  }
+}

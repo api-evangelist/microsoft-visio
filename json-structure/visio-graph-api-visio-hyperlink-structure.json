@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/microsoft-visio/refs/heads/main/json-structure/visio-graph-api-visio-hyperlink-structure.json",
+  "name": "VisioHyperlink",
+  "description": "Represents a hyperlink associated with a shape.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Unique identifier for the hyperlink." },
+    "address": { "type": "uri", "description": "The URL target of the hyperlink." },
+    "description": { "type": "string", "description": "Description of the hyperlink." },
+    "subAddress": { "type": "string", "description": "Sub-address target within the document." }
+  }
+}

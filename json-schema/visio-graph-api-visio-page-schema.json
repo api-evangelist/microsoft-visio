@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/microsoft-visio/refs/heads/main/json-schema/visio-graph-api-visio-page-schema.json",
+  "title": "VisioPage",
+  "description": "Represents a page in a Visio document.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Unique identifier for the page." },
+    "name": { "type": "string", "description": "The name of the page." },
+    "index": { "type": "integer", "description": "Zero-based index of the page." },
+    "height": { "type": "number", "format": "double", "description": "Height of the page in points." },
+    "width": { "type": "number", "format": "double", "description": "Width of the page in points." }
+  }
+}

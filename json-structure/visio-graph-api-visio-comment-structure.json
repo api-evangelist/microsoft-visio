@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/microsoft-visio/refs/heads/main/json-structure/visio-graph-api-visio-comment-structure.json",
+  "name": "VisioComment",
+  "description": "Represents a comment on a shape.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Unique identifier for the comment." },
+    "text": { "type": "string", "description": "The comment text." },
+    "author": { "type": "string", "description": "The author of the comment." },
+    "date": { "type": "datetime", "description": "When the comment was created." }
+  }
+}

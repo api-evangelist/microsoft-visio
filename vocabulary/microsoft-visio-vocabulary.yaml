@@ -1,0 +1,99 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Microsoft Visio"
+  description: "Vocabulary mapping operational (OpenAPI) and capability (Naftiko) dimensions for Microsoft Visio APIs."
+  created: "2026-04-18"
+  modified: "2026-04-18"
+
+operational:
+  apis:
+    - name: Microsoft Graph Visio API
+      namespace: visio-graph
+      version: "1.0.0"
+      baseUrl: https://graph.microsoft.com/v1.0
+      status: active
+
+  resources:
+    - name: Pages
+      api: visio-graph
+      actions: [list, get]
+    - name: Shapes
+      api: visio-graph
+      actions: [list, get]
+    - name: Shape Data Items
+      api: visio-graph
+      actions: [list]
+    - name: Comments
+      api: visio-graph
+      actions: [list]
+    - name: Hyperlinks
+      api: visio-graph
+      actions: [list]
+
+  actions:
+    - name: list
+      methods: [GET]
+      pattern: read
+    - name: get
+      methods: [GET]
+      pattern: read
+
+  schemas:
+    core:
+      - name: VisioPage
+        properties: [id, name, index, height, width]
+      - name: VisioShape
+        properties: [id, name, text, type]
+      - name: ShapeDataItem
+        properties: [label, value, format]
+      - name: VisioComment
+        properties: [id, text, author, date]
+      - name: VisioHyperlink
+        properties: [id, address, description, subAddress]
+
+  authentication:
+    schemes:
+      - type: oauth2
+        flow: authorizationCode
+        scopes: [Files.Read, Files.ReadWrite]
+
+capability:
+  workflows:
+    - name: Diagram Analysis
+      file: capabilities/diagram-analysis.yaml
+      description: "Analyze Visio diagrams programmatically."
+      apis: [visio-graph]
+      tools: 4
+      personas: [IT Architect, Business Analyst]
+      domains: [Diagramming, Visualization]
+
+  personas:
+    - id: it-architect
+      name: IT Architect
+      description: "IT architects analyzing network and system diagrams."
+      workflows: [Diagram Analysis]
+    - id: business-analyst
+      name: Business Analyst
+      description: "Business analysts reviewing process flow diagrams."
+      workflows: [Diagram Analysis]
+
+  domains:
+    - name: Diagramming
+      resources: [Pages, Shapes, Shape Data Items]
+    - name: Visualization
+      resources: [Comments, Hyperlinks]
+
+crossReference:
+  - resource: Pages
+    operations: [listPages, getPage]
+    workflows: [Diagram Analysis]
+    personas: [IT Architect, Business Analyst]
+  - resource: Shapes
+    operations: [listShapes, getShape]
+    workflows: [Diagram Analysis]
+    personas: [IT Architect, Business Analyst]
+  - resource: Shape Data Items
+    operations: [listShapeDataItems]
+    workflows: [Diagram Analysis]
+    personas: [IT Architect]

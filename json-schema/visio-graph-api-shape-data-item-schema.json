@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/microsoft-visio/refs/heads/main/json-schema/visio-graph-api-shape-data-item-schema.json",
+  "title": "ShapeDataItem",
+  "description": "Represents a data item associated with a shape.",
+  "type": "object",
+  "properties": {
+    "label": { "type": "string", "description": "Label of the data item." },
+    "value": { "type": "string", "description": "Value of the data item." },
+    "format": { "type": "string", "description": "Format of the data item." }
+  }
+}

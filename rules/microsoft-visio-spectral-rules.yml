@@ -1,0 +1,138 @@
+rules:
+  # INFO / METADATA
+  info-title-must-contain-microsoft-visio:
+    description: Info title must contain 'Microsoft' or 'Visio'
+    given: $.info.title
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: (Microsoft|Visio)
+  info-description-required:
+    description: Info description is required
+    given: $.info
+    severity: error
+    then:
+      field: description
+      function: truthy
+  info-version-required:
+    description: Info version is required
+    given: $.info
+    severity: error
+    then:
+      field: version
+      function: truthy
+
+  # OPENAPI VERSION
+  openapi-version-3:
+    description: Must use OpenAPI 3.x
+    given: $.openapi
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: "^3\\."
+
+  # SERVERS
+  servers-must-be-defined:
+    description: Servers array must be defined
+    given: $
+    severity: error
+    then:
+      field: servers
+      function: truthy
+  servers-https-required:
+    description: All server URLs must use HTTPS
+    given: $.servers[*].url
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  # OPERATIONS
+  operation-operationid-required:
+    description: Every operation must have an operationId
+    given: $.paths[*][get,post,put,patch,delete]
+    severity: error
+    then:
+      field: operationId
+      function: truthy
+  operation-summary-required:
+    description: Every operation must have a summary
+    given: $.paths[*][get,post,put,patch,delete]
+    severity: error
+    then:
+      field: summary
+      function: truthy
+  operation-summary-prefix:
+    description: Operation summaries should start with 'Microsoft Visio'
+    given: $.paths[*][get,post,put,patch,delete].summary
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Microsoft Visio"
+  operation-tags-required:
+    description: Every operation must have at least one tag
+    given: $.paths[*][get,post,put,patch,delete]
+    severity: error
+    then:
+      field: tags
+      function: truthy
+  operation-operationid-camel-case:
+    description: operationId should use camelCase
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]*$"
+
+  # PARAMETERS
+  parameter-description-required:
+    description: Parameters must have a description
+    given: $.paths[*][get,post,put,patch,delete].parameters[*]
+    severity: warn
+    then:
+      field: description
+      function: truthy
+
+  # RESPONSES
+  response-success-required:
+    description: Every operation must define a success response
+    given: $.paths[*][get,post,put,patch,delete].responses
+    severity: error
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          anyOf:
+            - required: ["200"]
+            - required: ["201"]
+            - required: ["204"]
+  response-401-recommended:
+    description: Operations should define a 401 Unauthorized response
+    given: $.paths[*][get,post,put,patch,delete].responses
+    severity: warn
+    then:
+      field: "401"
+      function: truthy
+
+  # SECURITY
+  security-global-defined:
+    description: Global security must be defined
+    given: $
+    severity: error
+    then:
+      field: security
+      function: truthy
+
+  # HTTP METHOD CONVENTIONS
+  get-no-request-body:
+    description: GET operations must not have a request body
+    given: $.paths[*].get
+    severity: error
+    then:
+      field: requestBody
+      function: falsy

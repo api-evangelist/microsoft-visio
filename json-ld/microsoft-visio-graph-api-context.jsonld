@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ms": "https://graph.microsoft.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "VisioPage": "ms:VisioPage",
+    "VisioShape": "ms:VisioShape",
+    "ShapeDataItem": "ms:ShapeDataItem",
+    "VisioComment": "ms:VisioComment",
+    "VisioHyperlink": "ms:VisioHyperlink",
+    "name": "schema:name",
+    "description": "schema:description",
+    "id": { "@id": "ms:id", "@type": "xsd:string" },
+    "index": { "@id": "ms:index", "@type": "xsd:integer" },
+    "height": { "@id": "ms:height", "@type": "xsd:double" },
+    "width": { "@id": "ms:width", "@type": "xsd:double" },
+    "text": { "@id": "ms:text", "@type": "xsd:string" },
+    "type": { "@id": "ms:type", "@type": "xsd:string" },
+    "label": { "@id": "ms:label", "@type": "xsd:string" },
+    "value": { "@id": "ms:value", "@type": "xsd:string" },
+    "format": { "@id": "ms:format", "@type": "xsd:string" },
+    "author": { "@id": "ms:author", "@type": "xsd:string" },
+    "date": { "@id": "ms:date", "@type": "xsd:dateTime" },
+    "address": { "@id": "ms:address", "@type": "@id" },
+    "subAddress": { "@id": "ms:subAddress", "@type": "xsd:string" }
+  }
+}
