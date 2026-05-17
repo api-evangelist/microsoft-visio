@@ -53,7 +53,7 @@ apis:
         url: json-schema/visio-graph-api-visio-hyperlink-schema.json
       - type: JSONStructure
         url: json-structure/visio-graph-api-visio-page-structure.json
-      - type: JSON-LD
+      - type: JSONLD
         url: json-ld/microsoft-visio-graph-api-context.jsonld
       - type: Example
         url: examples/visio-graph-api-visio-page-example.json
