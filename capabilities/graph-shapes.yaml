@@ -1,0 +1,143 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft Graph Visio API — Shapes
+  description: 'Microsoft Graph Visio API — Shapes. 2 operations. Lead operation: Microsoft Visio List Shapes. Self-contained
+    Naftiko capability covering one Microsoft Visio business surface.'
+  tags:
+  - Microsoft Visio
+  - Shapes
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_VISIO_API_KEY: MICROSOFT_VISIO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: graph-shapes
+    baseUri: https://graph.microsoft.com/v1.0
+    description: Microsoft Graph Visio API — Shapes business capability. Self-contained, no shared references.
+    resources:
+    - name: me-drive-items-item-id-workbook-pages-page-id-shapes
+      path: /me/drive/items/{item-id}/workbook/pages/{page-id}/shapes
+      operations:
+      - name: listshapes
+        method: GET
+        description: Microsoft Visio List Shapes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: item-id
+          in: path
+          type: string
+          description: The ID of the Visio file.
+          required: true
+        - name: page-id
+          in: path
+          type: string
+          description: The ID of the page.
+          required: true
+    - name: me-drive-items-item-id-workbook-pages-page-id-shapes-shape-id
+      path: /me/drive/items/{item-id}/workbook/pages/{page-id}/shapes/{shape-id}
+      operations:
+      - name: getshape
+        method: GET
+        description: Microsoft Visio Get Shape
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: item-id
+          in: path
+          type: string
+          description: The ID of the Visio file.
+          required: true
+        - name: page-id
+          in: path
+          type: string
+          description: The ID of the page.
+          required: true
+        - name: shape-id
+          in: path
+          type: string
+          description: The ID of the shape.
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_VISIO_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: graph-shapes-rest
+    port: 8080
+    description: REST adapter for Microsoft Graph Visio API — Shapes. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/me/drive/items/{item-id}/workbook/pages/{page-id}/shapes
+      name: me-drive-items-item-id-workbook-pages-page-id-shapes
+      description: REST surface for me-drive-items-item-id-workbook-pages-page-id-shapes.
+      operations:
+      - method: GET
+        name: listshapes
+        description: Microsoft Visio List Shapes
+        call: graph-shapes.listshapes
+        with:
+          item-id: rest.item-id
+          page-id: rest.page-id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/me/drive/items/{item-id}/workbook/pages/{page-id}/shapes/{shape-id}
+      name: me-drive-items-item-id-workbook-pages-page-id-shapes-shape-id
+      description: REST surface for me-drive-items-item-id-workbook-pages-page-id-shapes-shape-id.
+      operations:
+      - method: GET
+        name: getshape
+        description: Microsoft Visio Get Shape
+        call: graph-shapes.getshape
+        with:
+          item-id: rest.item-id
+          page-id: rest.page-id
+          shape-id: rest.shape-id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: graph-shapes-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft Graph Visio API — Shapes. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: microsoft-visio-list-shapes
+      description: Microsoft Visio List Shapes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: graph-shapes.listshapes
+      with:
+        item-id: tools.item-id
+        page-id: tools.page-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: microsoft-visio-get-shape
+      description: Microsoft Visio Get Shape
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: graph-shapes.getshape
+      with:
+        item-id: tools.item-id
+        page-id: tools.page-id
+        shape-id: tools.shape-id
+      outputParameters:
+      - type: object
+        mapping: $.
