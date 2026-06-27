@@ -51,21 +51,21 @@ apis:
     url: json-structure/visio-graph-api-visio-page-structure.json
   - type: JSONLD
     url: json-ld/microsoft-visio-graph-api-context.jsonld
-  - type: Example
+  - type: Examples
     url: examples/visio-graph-api-visio-page-example.json
-  - type: Example
+  - type: Examples
     url: examples/visio-graph-api-visio-shape-example.json
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/graph-comments.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/graph-documents.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/graph-hyperlinks.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/graph-pages.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/graph-shape-data.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/graph-shapes.yaml
 - name: Visio JavaScript API
   description: JavaScript API for building add-ins and extending Visio functionality in the browser with access to documents,
