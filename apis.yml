@@ -87,6 +87,8 @@ apis:
   - type: CodeExamples
     url: https://github.com/OfficeDev/Office-Add-in-samples
 common:
+- type: OAuthScopes
+  url: scopes/microsoft-visio-scopes.yml
 - type: Support
   url: https://support.microsoft.com/visio
 - type: Blog
