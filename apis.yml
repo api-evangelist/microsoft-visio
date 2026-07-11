@@ -87,6 +87,12 @@ apis:
   - type: CodeExamples
     url: https://github.com/OfficeDev/Office-Add-in-samples
 common:
+- type: VulnerabilityDisclosure
+  url: security/microsoft-visio-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/microsoft-visio-domain-security.yml
+- type: Authentication
+  url: authentication/microsoft-visio-authentication.yml
 - type: OAuthScopes
   url: scopes/microsoft-visio-scopes.yml
 - type: Support
