@@ -87,6 +87,8 @@ apis:
   - type: CodeExamples
     url: https://github.com/OfficeDev/Office-Add-in-samples
 common:
+- type: AgenticAccess
+  url: agentic-access/microsoft-visio-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/microsoft-visio-vulnerability-disclosure.yml
 - type: DomainSecurity
