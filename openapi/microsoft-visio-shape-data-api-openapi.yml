@@ -1,0 +1,110 @@
+openapi: 3.0.3
+info:
+  title: Microsoft Graph Visio Comments Shape Data API
+  description: REST API for accessing and interacting with Visio files stored in SharePoint Online and OneDrive for Business through Microsoft Graph. Provides operations for reading pages, shapes, shape data, comments, and hyperlinks from Visio diagrams.
+  version: 1.0.0
+  contact:
+    name: Microsoft Graph Support
+    url: https://developer.microsoft.com/graph/support
+  license:
+    name: Microsoft API Terms of Use
+    url: https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0 production endpoint
+security:
+- oauth2:
+  - Files.Read
+  - Files.ReadWrite
+tags:
+- name: Shape Data
+  description: Operations for reading shape data items.
+paths:
+  /me/drive/items/{item-id}/workbook/pages/{page-id}/shapes/{shape-id}/shapeDataItems:
+    get:
+      operationId: listShapeDataItems
+      summary: Microsoft Visio List Shape Data Items
+      description: Retrieve data items associated with a shape.
+      tags:
+      - Shape Data
+      parameters:
+      - name: item-id
+        in: path
+        required: true
+        description: The ID of the Visio file.
+        schema:
+          type: string
+      - name: page-id
+        in: path
+        required: true
+        description: The ID of the page.
+        schema:
+          type: string
+      - name: shape-id
+        in: path
+        required: true
+        description: The ID of the shape.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Shape data items returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShapeDataItemCollection'
+              examples:
+                ListShapeDataItems200Example:
+                  summary: Default listShapeDataItems 200 response
+                  x-microcks-default: true
+                  value:
+                    value:
+                    - label: IP Address
+                      value: 10.0.1.100
+                      format: string
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Shape not found.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    ShapeDataItemCollection:
+      type: object
+      description: Collection of shape data items.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/ShapeDataItem'
+    ShapeDataItem:
+      type: object
+      description: Represents a data item associated with a shape.
+      properties:
+        label:
+          type: string
+          description: Label of the data item.
+          example: IP Address
+        value:
+          type: string
+          description: Value of the data item.
+          example: 10.0.1.100
+        format:
+          type: string
+          description: Format of the data item.
+          example: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authorization using Microsoft Identity Platform
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            Files.Read: Read user files
+            Files.ReadWrite: Read and write user files

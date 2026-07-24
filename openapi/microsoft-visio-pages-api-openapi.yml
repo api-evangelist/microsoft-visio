@@ -1,0 +1,154 @@
+openapi: 3.0.3
+info:
+  title: Microsoft Graph Visio Comments Pages API
+  description: REST API for accessing and interacting with Visio files stored in SharePoint Online and OneDrive for Business through Microsoft Graph. Provides operations for reading pages, shapes, shape data, comments, and hyperlinks from Visio diagrams.
+  version: 1.0.0
+  contact:
+    name: Microsoft Graph Support
+    url: https://developer.microsoft.com/graph/support
+  license:
+    name: Microsoft API Terms of Use
+    url: https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use
+  x-generated-from: documentation
+  x-last-validated: '2026-04-18'
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0 production endpoint
+security:
+- oauth2:
+  - Files.Read
+  - Files.ReadWrite
+tags:
+- name: Pages
+  description: Operations for managing pages in Visio documents.
+paths:
+  /me/drive/items/{item-id}/workbook/pages:
+    get:
+      operationId: listPages
+      summary: Microsoft Visio List Pages
+      description: Retrieve a list of pages in the Visio document.
+      tags:
+      - Pages
+      parameters:
+      - name: item-id
+        in: path
+        required: true
+        description: The ID of the Visio file.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Pages returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageCollection'
+              examples:
+                ListPages200Example:
+                  summary: Default listPages 200 response
+                  x-microcks-default: true
+                  value:
+                    value:
+                    - id: page-001
+                      name: Page-1
+                      index: 0
+                      height: 792.0
+                      width: 612.0
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Document not found.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /me/drive/items/{item-id}/workbook/pages/{page-id}:
+    get:
+      operationId: getPage
+      summary: Microsoft Visio Get Page
+      description: Retrieve a specific page from the Visio document.
+      tags:
+      - Pages
+      parameters:
+      - name: item-id
+        in: path
+        required: true
+        description: The ID of the Visio file.
+        schema:
+          type: string
+      - name: page-id
+        in: path
+        required: true
+        description: The ID of the page.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Page returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VisioPage'
+              examples:
+                GetPage200Example:
+                  summary: Default getPage 200 response
+                  x-microcks-default: true
+                  value:
+                    id: page-001
+                    name: Page-1
+                    index: 0
+                    height: 792.0
+                    width: 612.0
+        '401':
+          description: Unauthorized.
+        '404':
+          description: Page not found.
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    VisioPage:
+      type: object
+      description: Represents a page in a Visio document.
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the page.
+          example: page-001
+        name:
+          type: string
+          description: The name of the page.
+          example: Page-1
+        index:
+          type: integer
+          description: Zero-based index of the page.
+          example: 0
+        height:
+          type: number
+          format: double
+          description: Height of the page in points.
+          example: 792.0
+        width:
+          type: number
+          format: double
+          description: Width of the page in points.
+          example: 612.0
+    PageCollection:
+      type: object
+      description: Collection of Visio pages.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/VisioPage'
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authorization using Microsoft Identity Platform
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            Files.Read: Read user files
+            Files.ReadWrite: Read and write user files
