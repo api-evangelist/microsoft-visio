@@ -3,6 +3,19 @@ name: Microsoft Visio
 description: APIs and resources for Microsoft Visio, a diagramming and vector graphics application that helps visualize data-connected
   business process flows. Provides programmatic access to diagrams, pages, shapes, data items, comments, and hyperlinks through
   Microsoft Graph and JavaScript APIs.
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://learn.microsoft.com/en-us/graph/images/visio-logo.png
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-visio/refs/heads/main/apis.yml
 humanURL: https://www.microsoft.com/en-us/microsoft-365/visio/microsoft-visio-plans-and-pricing-compare-visio-options
@@ -17,22 +30,38 @@ tags:
 - Microsoft 365
 - Visualization
 apis:
-- name: Microsoft Graph Visio API
-  description: REST API for accessing and interacting with Visio files stored in SharePoint Online and OneDrive for Business
-    through Microsoft Graph. Supports reading pages, shapes, shape data, comments, and hyperlinks.
+- name: Visio JavaScript API
+  description: >-
+    JavaScript API for building add-ins and extending Visio functionality in the browser with access to
+    documents, pages, shapes, and comments.
+  humanURL: https://learn.microsoft.com/en-us/javascript/api/visio
+  baseURL: https://learn.microsoft.com/en-us/javascript/api/visio
+  tags:
+  - Add-Ins
+  - Browser
+  - JavaScript
+  - Office Add-Ins
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/javascript/api/visio
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/javascript/api/visio?view=visio-js-1.1
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/office/dev/add-ins/visio/visio-add-ins-overview
+  - type: CodeExamples
+    url: https://github.com/OfficeDev/Office-Add-in-samples
+- aid: microsoft-visio:microsoft-visio-comments-api
+  name: Microsoft Visio Comments API
+  description: Operations for reading and managing shape comments.
   humanURL: https://learn.microsoft.com/en-us/graph/api/resources/visio
   baseURL: https://graph.microsoft.com/v1.0
   tags:
-  - Microsoft Graph
-  - OneDrive
-  - REST API
-  - SharePoint
-  - Visio Files
+  - Comments
   properties:
+  - type: OpenAPI
+    url: openapi/microsoft-visio-comments-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/graph/api/resources/visio
-  - type: OpenAPI
-    url: openapi/microsoft-visio-graph-api.yaml
   - type: Authentication
     url: https://learn.microsoft.com/en-us/graph/auth/
   - type: GettingStarted
@@ -67,26 +96,239 @@ apis:
     url: capabilities/graph-shape-data.yaml
   - type: X-NaftikoCapability
     url: capabilities/graph-shapes.yaml
-- name: Visio JavaScript API
-  description: JavaScript API for building add-ins and extending Visio functionality in the browser with access to documents,
-    pages, shapes, and comments.
-  humanURL: https://learn.microsoft.com/en-us/javascript/api/visio
-  baseURL: https://learn.microsoft.com/en-us/javascript/api/visio
+- aid: microsoft-visio:microsoft-visio-documents-api
+  name: Microsoft Visio Documents API
+  description: Operations for Visio document metadata.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  baseURL: https://graph.microsoft.com/v1.0
   tags:
-  - Add-Ins
-  - Browser
-  - JavaScript
-  - Office Add-Ins
+  - Documents
   properties:
+  - type: OpenAPI
+    url: openapi/microsoft-visio-documents-api-openapi.yml
   - type: Documentation
-    url: https://learn.microsoft.com/en-us/javascript/api/visio
-  - type: APIReference
-    url: https://learn.microsoft.com/en-us/javascript/api/visio?view=visio-js-1.1
+    url: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/graph/auth/
   - type: GettingStarted
-    url: https://learn.microsoft.com/en-us/office/dev/add-ins/visio/visio-add-ins-overview
-  - type: CodeExamples
-    url: https://github.com/OfficeDev/Office-Add-in-samples
+    url: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-page-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-shape-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-shape-data-item-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-comment-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-hyperlink-schema.json
+  - type: JSONStructure
+    url: json-structure/visio-graph-api-visio-page-structure.json
+  - type: JSONLD
+    url: json-ld/microsoft-visio-graph-api-context.jsonld
+  - type: Examples
+    url: examples/visio-graph-api-visio-page-example.json
+  - type: Examples
+    url: examples/visio-graph-api-visio-shape-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/graph-comments.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-documents.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-hyperlinks.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-pages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-shape-data.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-shapes.yaml
+- aid: microsoft-visio:microsoft-visio-hyperlinks-api
+  name: Microsoft Visio Hyperlinks API
+  description: Operations for reading shape hyperlinks.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  baseURL: https://graph.microsoft.com/v1.0
+  tags:
+  - Hyperlinks
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-visio-hyperlinks-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/graph/auth/
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-page-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-shape-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-shape-data-item-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-comment-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-hyperlink-schema.json
+  - type: JSONStructure
+    url: json-structure/visio-graph-api-visio-page-structure.json
+  - type: JSONLD
+    url: json-ld/microsoft-visio-graph-api-context.jsonld
+  - type: Examples
+    url: examples/visio-graph-api-visio-page-example.json
+  - type: Examples
+    url: examples/visio-graph-api-visio-shape-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/graph-comments.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-documents.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-hyperlinks.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-pages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-shape-data.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-shapes.yaml
+- aid: microsoft-visio:microsoft-visio-pages-api
+  name: Microsoft Visio Pages API
+  description: Operations for managing pages in Visio documents.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  baseURL: https://graph.microsoft.com/v1.0
+  tags:
+  - Pages
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-visio-pages-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/graph/auth/
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-page-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-shape-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-shape-data-item-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-comment-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-hyperlink-schema.json
+  - type: JSONStructure
+    url: json-structure/visio-graph-api-visio-page-structure.json
+  - type: JSONLD
+    url: json-ld/microsoft-visio-graph-api-context.jsonld
+  - type: Examples
+    url: examples/visio-graph-api-visio-page-example.json
+  - type: Examples
+    url: examples/visio-graph-api-visio-shape-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/graph-comments.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-documents.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-hyperlinks.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-pages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-shape-data.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-shapes.yaml
+- aid: microsoft-visio:microsoft-visio-shape-data-api
+  name: Microsoft Visio Shape Data API
+  description: Operations for reading shape data items.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  baseURL: https://graph.microsoft.com/v1.0
+  tags:
+  - Shape Data
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-visio-shape-data-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/graph/auth/
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-page-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-shape-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-shape-data-item-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-comment-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-hyperlink-schema.json
+  - type: JSONStructure
+    url: json-structure/visio-graph-api-visio-page-structure.json
+  - type: JSONLD
+    url: json-ld/microsoft-visio-graph-api-context.jsonld
+  - type: Examples
+    url: examples/visio-graph-api-visio-page-example.json
+  - type: Examples
+    url: examples/visio-graph-api-visio-shape-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/graph-comments.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-documents.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-hyperlinks.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-pages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-shape-data.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-shapes.yaml
+- aid: microsoft-visio:microsoft-visio-shapes-api
+  name: Microsoft Visio Shapes API
+  description: Operations for managing shapes on pages.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  baseURL: https://graph.microsoft.com/v1.0
+  tags:
+  - Shapes
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-visio-shapes-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/graph/auth/
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/graph/api/resources/visio
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-page-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-shape-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-shape-data-item-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-comment-schema.json
+  - type: JSONSchema
+    url: json-schema/visio-graph-api-visio-hyperlink-schema.json
+  - type: JSONStructure
+    url: json-structure/visio-graph-api-visio-page-structure.json
+  - type: JSONLD
+    url: json-ld/microsoft-visio-graph-api-context.jsonld
+  - type: Examples
+    url: examples/visio-graph-api-visio-page-example.json
+  - type: Examples
+    url: examples/visio-graph-api-visio-shape-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/graph-comments.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-documents.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-hyperlinks.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-pages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-shape-data.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/graph-shapes.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/microsoft-visio/overview
 - type: AgenticAccess
   url: agentic-access/microsoft-visio-agentic-access.yml
 - type: VulnerabilityDisclosure
