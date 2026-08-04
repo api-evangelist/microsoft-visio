@@ -1,0 +1,268 @@
+{
+  "info": {
+    "_postman_id": "50b1d80a-5fdb-4522-bb91-0b7fc0be106d",
+    "name": "Microsoft Graph Visio Comments Documents API",
+    "description": "REST API for accessing and interacting with Visio files stored in SharePoint Online and OneDrive for Business through Microsoft Graph. Provides operations for reading pages, shapes, shape data, comments, and hyperlinks from Visio diagrams.\n\nContact Support:\n Name: Microsoft Graph Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:12:48.000Z",
+    "updatedAt": "2026-07-28T02:12:48.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-50b1d80a-5fdb-4522-bb91-0b7fc0be106d"
+  },
+  "item": [
+    {
+      "name": "me",
+      "item": [
+        {
+          "name": "drive",
+          "item": [
+            {
+              "name": "items",
+              "item": [
+                {
+                  "name": "{item-id}",
+                  "item": [
+                    {
+                      "name": "workbook",
+                      "item": [
+                        {
+                          "name": "Microsoft Visio Get Document",
+                          "id": "4ad44bd9-eca1-4632-a05e-28bd1478ef2b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "me",
+                                "drive",
+                                "items",
+                                ":item-id",
+                                "workbook"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "b9203237-63c3-4a2f-8c4f-e2ed7e4b715a",
+                                  "key": "item-id",
+                                  "value": "<string>",
+                                  "description": "(Required) The ID of the Visio file in OneDrive."
+                                }
+                              ]
+                            },
+                            "description": "Retrieve metadata for a Visio document stored in OneDrive or SharePoint."
+                          },
+                          "response": [
+                            {
+                              "id": "24b6f126-2b13-45ae-9edd-70c76a7c8bff",
+                              "name": "Document metadata returned successfully.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "me",
+                                    "drive",
+                                    "items",
+                                    ":item-id",
+                                    "workbook"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "item-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"pages\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"index\": \"<integer>\",\n      \"height\": \"<double>\",\n      \"width\": \"<double>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"index\": \"<integer>\",\n      \"height\": \"<double>\",\n      \"width\": \"<double>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:12:49.000Z",
+                              "updatedAt": "2026-07-28T02:12:49.000Z",
+                              "uid": "35240-24b6f126-2b13-45ae-9edd-70c76a7c8bff"
+                            },
+                            {
+                              "id": "bf6e1597-1877-4cf4-8a5d-3825d1b83ec8",
+                              "name": "Unauthorized.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "me",
+                                    "drive",
+                                    "items",
+                                    ":item-id",
+                                    "workbook"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "item-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:12:49.000Z",
+                              "updatedAt": "2026-07-28T02:12:49.000Z",
+                              "uid": "35240-bf6e1597-1877-4cf4-8a5d-3825d1b83ec8"
+                            },
+                            {
+                              "id": "76d147fd-1960-4e5c-b060-6f458f82c394",
+                              "name": "Document not found.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "me",
+                                    "drive",
+                                    "items",
+                                    ":item-id",
+                                    "workbook"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "item-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:12:49.000Z",
+                              "updatedAt": "2026-07-28T02:12:49.000Z",
+                              "uid": "35240-76d147fd-1960-4e5c-b060-6f458f82c394"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:12:49.000Z",
+                          "updatedAt": "2026-07-28T02:12:49.000Z",
+                          "uid": "35240-4ad44bd9-eca1-4632-a05e-28bd1478ef2b"
+                        }
+                      ],
+                      "id": "8ac2585c-32f0-4f36-9842-1711e45e8326",
+                      "createdAt": "2026-07-28T02:12:49.000Z",
+                      "updatedAt": "2026-07-28T02:12:49.000Z",
+                      "uid": "35240-8ac2585c-32f0-4f36-9842-1711e45e8326"
+                    }
+                  ],
+                  "id": "5809e5f0-f76d-43c0-a9d5-2fa86986f846",
+                  "createdAt": "2026-07-28T02:12:49.000Z",
+                  "updatedAt": "2026-07-28T02:12:49.000Z",
+                  "uid": "35240-5809e5f0-f76d-43c0-a9d5-2fa86986f846"
+                }
+              ],
+              "id": "b5938c4e-208f-431c-9c53-79032ddbdc1f",
+              "createdAt": "2026-07-28T02:12:49.000Z",
+              "updatedAt": "2026-07-28T02:12:49.000Z",
+              "uid": "35240-b5938c4e-208f-431c-9c53-79032ddbdc1f"
+            }
+          ],
+          "id": "21dee7e9-1d91-41fc-aa44-579f4168ec51",
+          "createdAt": "2026-07-28T02:12:49.000Z",
+          "updatedAt": "2026-07-28T02:12:49.000Z",
+          "uid": "35240-21dee7e9-1d91-41fc-aa44-579f4168ec51"
+        }
+      ],
+      "id": "5fc2203d-a220-45fb-b9aa-4dc067ac4211",
+      "createdAt": "2026-07-28T02:12:49.000Z",
+      "updatedAt": "2026-07-28T02:12:49.000Z",
+      "uid": "35240-5fc2203d-a220-45fb-b9aa-4dc067ac4211"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "Files.Read Files.ReadWrite",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.microsoft.com/v1.0"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "provider": "microsoft-visio",
+  "sources": [
+    "microsoft-visio-comments-api-openapi.yml",
+    "microsoft-visio-documents-api-openapi.yml",
+    "microsoft-visio-hyperlinks-api-openapi.yml",
+    "microsoft-visio-pages-api-openapi.yml",
+    "microsoft-visio-shape-data-api-openapi.yml",
+    "microsoft-visio-shapes-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-visio-comments-api-openapi.yml",
+    "microsoft-visio-documents-api-openapi.yml",
+    "microsoft-visio-hyperlinks-api-openapi.yml",
+    "microsoft-visio-pages-api-openapi.yml",
+    "microsoft-visio-shape-data-api-openapi.yml",
+    "microsoft-visio-shapes-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

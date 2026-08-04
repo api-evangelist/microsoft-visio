@@ -1,0 +1,363 @@
+{
+  "info": {
+    "_postman_id": "e25aa0f8-3220-4382-8e7b-832b0509db0c",
+    "name": "Microsoft Graph Visio Comments Shape Data API",
+    "description": "REST API for accessing and interacting with Visio files stored in SharePoint Online and OneDrive for Business through Microsoft Graph. Provides operations for reading pages, shapes, shape data, comments, and hyperlinks from Visio diagrams.\n\nContact Support:\n Name: Microsoft Graph Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:12:52.000Z",
+    "updatedAt": "2026-07-28T02:12:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e25aa0f8-3220-4382-8e7b-832b0509db0c"
+  },
+  "item": [
+    {
+      "name": "me",
+      "item": [
+        {
+          "name": "drive",
+          "item": [
+            {
+              "name": "items",
+              "item": [
+                {
+                  "name": "{item-id}",
+                  "item": [
+                    {
+                      "name": "workbook",
+                      "item": [
+                        {
+                          "name": "pages",
+                          "item": [
+                            {
+                              "name": "{page-id}",
+                              "item": [
+                                {
+                                  "name": "shapes",
+                                  "item": [
+                                    {
+                                      "name": "{shape-id}",
+                                      "item": [
+                                        {
+                                          "name": "shapeDataItems",
+                                          "item": [
+                                            {
+                                              "name": "Microsoft Visio List Shape Data Items",
+                                              "id": "22868df0-1c58-4628-b7a8-5a6feeff54ab",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages/:page-id/shapes/:shape-id/shapeDataItems",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "me",
+                                                    "drive",
+                                                    "items",
+                                                    ":item-id",
+                                                    "workbook",
+                                                    "pages",
+                                                    ":page-id",
+                                                    "shapes",
+                                                    ":shape-id",
+                                                    "shapeDataItems"
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "a92937c9-2771-4bf1-8cd5-02fb5c1dbf8b",
+                                                      "key": "item-id",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The ID of the Visio file."
+                                                    },
+                                                    {
+                                                      "id": "80296a93-1825-4761-8002-4bd2560513df",
+                                                      "key": "page-id",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The ID of the page."
+                                                    },
+                                                    {
+                                                      "id": "611d66da-ac5a-4c15-84ec-fcef08feb12c",
+                                                      "key": "shape-id",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The ID of the shape."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Retrieve data items associated with a shape."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "28e608eb-ab45-431c-9941-da61b504a32b",
+                                                  "name": "Shape data items returned successfully.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages/:page-id/shapes/:shape-id/shapeDataItems",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "me",
+                                                        "drive",
+                                                        "items",
+                                                        ":item-id",
+                                                        "workbook",
+                                                        "pages",
+                                                        ":page-id",
+                                                        "shapes",
+                                                        ":shape-id",
+                                                        "shapeDataItems"
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "item-id"
+                                                        },
+                                                        {
+                                                          "key": "page-id"
+                                                        },
+                                                        {
+                                                          "key": "shape-id"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"value\": [\n    {\n      \"label\": \"<string>\",\n      \"value\": \"<string>\",\n      \"format\": \"<string>\"\n    },\n    {\n      \"label\": \"<string>\",\n      \"value\": \"<string>\",\n      \"format\": \"<string>\"\n    }\n  ]\n}",
+                                                  "createdAt": "2026-07-28T02:12:53.000Z",
+                                                  "updatedAt": "2026-07-28T02:12:53.000Z",
+                                                  "uid": "35240-28e608eb-ab45-431c-9941-da61b504a32b"
+                                                },
+                                                {
+                                                  "id": "c059248e-1af6-4430-b287-fd65c9fdaae1",
+                                                  "name": "Unauthorized.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages/:page-id/shapes/:shape-id/shapeDataItems",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "me",
+                                                        "drive",
+                                                        "items",
+                                                        ":item-id",
+                                                        "workbook",
+                                                        "pages",
+                                                        ":page-id",
+                                                        "shapes",
+                                                        ":shape-id",
+                                                        "shapeDataItems"
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "item-id"
+                                                        },
+                                                        {
+                                                          "key": "page-id"
+                                                        },
+                                                        {
+                                                          "key": "shape-id"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Unauthorized",
+                                                  "code": 401,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-07-28T02:12:53.000Z",
+                                                  "updatedAt": "2026-07-28T02:12:53.000Z",
+                                                  "uid": "35240-c059248e-1af6-4430-b287-fd65c9fdaae1"
+                                                },
+                                                {
+                                                  "id": "4bbc1b16-bbe3-409f-b1ca-a6d500afa382",
+                                                  "name": "Shape not found.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages/:page-id/shapes/:shape-id/shapeDataItems",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "me",
+                                                        "drive",
+                                                        "items",
+                                                        ":item-id",
+                                                        "workbook",
+                                                        "pages",
+                                                        ":page-id",
+                                                        "shapes",
+                                                        ":shape-id",
+                                                        "shapeDataItems"
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "item-id"
+                                                        },
+                                                        {
+                                                          "key": "page-id"
+                                                        },
+                                                        {
+                                                          "key": "shape-id"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Not Found",
+                                                  "code": 404,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-07-28T02:12:53.000Z",
+                                                  "updatedAt": "2026-07-28T02:12:53.000Z",
+                                                  "uid": "35240-4bbc1b16-bbe3-409f-b1ca-a6d500afa382"
+                                                }
+                                              ],
+                                              "createdAt": "2026-07-28T02:12:53.000Z",
+                                              "updatedAt": "2026-07-28T02:12:53.000Z",
+                                              "uid": "35240-22868df0-1c58-4628-b7a8-5a6feeff54ab"
+                                            }
+                                          ],
+                                          "id": "d574f42a-820b-4255-819e-21e84bf2c190",
+                                          "createdAt": "2026-07-28T02:12:53.000Z",
+                                          "updatedAt": "2026-07-28T02:12:53.000Z",
+                                          "uid": "35240-d574f42a-820b-4255-819e-21e84bf2c190"
+                                        }
+                                      ],
+                                      "id": "fa1d0cba-a0c1-46be-86cc-65b93e49df1f",
+                                      "createdAt": "2026-07-28T02:12:53.000Z",
+                                      "updatedAt": "2026-07-28T02:12:53.000Z",
+                                      "uid": "35240-fa1d0cba-a0c1-46be-86cc-65b93e49df1f"
+                                    }
+                                  ],
+                                  "id": "66331600-c0fe-4964-b750-a61847bd12f5",
+                                  "createdAt": "2026-07-28T02:12:53.000Z",
+                                  "updatedAt": "2026-07-28T02:12:53.000Z",
+                                  "uid": "35240-66331600-c0fe-4964-b750-a61847bd12f5"
+                                }
+                              ],
+                              "id": "8d33e854-9a4f-4318-b5b2-d4d250ac37d3",
+                              "createdAt": "2026-07-28T02:12:53.000Z",
+                              "updatedAt": "2026-07-28T02:12:53.000Z",
+                              "uid": "35240-8d33e854-9a4f-4318-b5b2-d4d250ac37d3"
+                            }
+                          ],
+                          "id": "575b008e-15bc-410e-b5d3-d92d063570f0",
+                          "createdAt": "2026-07-28T02:12:53.000Z",
+                          "updatedAt": "2026-07-28T02:12:53.000Z",
+                          "uid": "35240-575b008e-15bc-410e-b5d3-d92d063570f0"
+                        }
+                      ],
+                      "id": "1b93badd-734c-44f6-aef9-5a70b2f5e77f",
+                      "createdAt": "2026-07-28T02:12:53.000Z",
+                      "updatedAt": "2026-07-28T02:12:53.000Z",
+                      "uid": "35240-1b93badd-734c-44f6-aef9-5a70b2f5e77f"
+                    }
+                  ],
+                  "id": "5f5440cd-b44a-4660-806e-fe784b730ad7",
+                  "createdAt": "2026-07-28T02:12:53.000Z",
+                  "updatedAt": "2026-07-28T02:12:53.000Z",
+                  "uid": "35240-5f5440cd-b44a-4660-806e-fe784b730ad7"
+                }
+              ],
+              "id": "f96cbb45-d734-4f72-8380-a0479a98f1e3",
+              "createdAt": "2026-07-28T02:12:53.000Z",
+              "updatedAt": "2026-07-28T02:12:53.000Z",
+              "uid": "35240-f96cbb45-d734-4f72-8380-a0479a98f1e3"
+            }
+          ],
+          "id": "659d13ef-6def-42e8-9b4f-c6f347849254",
+          "createdAt": "2026-07-28T02:12:53.000Z",
+          "updatedAt": "2026-07-28T02:12:53.000Z",
+          "uid": "35240-659d13ef-6def-42e8-9b4f-c6f347849254"
+        }
+      ],
+      "id": "9881a0c0-d19b-4ad8-9a00-15d18ece62c7",
+      "createdAt": "2026-07-28T02:12:53.000Z",
+      "updatedAt": "2026-07-28T02:12:53.000Z",
+      "uid": "35240-9881a0c0-d19b-4ad8-9a00-15d18ece62c7"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "Files.Read Files.ReadWrite",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.microsoft.com/v1.0"
+    }
+  ]
+}

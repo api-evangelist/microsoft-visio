@@ -1,0 +1,491 @@
+{
+  "info": {
+    "_postman_id": "b056fe62-1ab0-4c2f-94cc-616ce03be4ca",
+    "name": "Microsoft Graph Visio Comments Pages API",
+    "description": "REST API for accessing and interacting with Visio files stored in SharePoint Online and OneDrive for Business through Microsoft Graph. Provides operations for reading pages, shapes, shape data, comments, and hyperlinks from Visio diagrams.\n\nContact Support:\n Name: Microsoft Graph Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:12:50.000Z",
+    "updatedAt": "2026-07-28T02:12:50.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b056fe62-1ab0-4c2f-94cc-616ce03be4ca"
+  },
+  "item": [
+    {
+      "name": "me",
+      "item": [
+        {
+          "name": "drive",
+          "item": [
+            {
+              "name": "items",
+              "item": [
+                {
+                  "name": "{item-id}",
+                  "item": [
+                    {
+                      "name": "workbook",
+                      "item": [
+                        {
+                          "name": "pages",
+                          "item": [
+                            {
+                              "name": "{page-id}",
+                              "item": [
+                                {
+                                  "name": "Microsoft Visio Get Page",
+                                  "id": "d8ec3568-8bef-483a-a062-4fb9896bafbf",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages/:page-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "me",
+                                        "drive",
+                                        "items",
+                                        ":item-id",
+                                        "workbook",
+                                        "pages",
+                                        ":page-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "221453b7-3a5f-4972-abfe-f5bd2a504856",
+                                          "key": "item-id",
+                                          "value": "<string>",
+                                          "description": "(Required) The ID of the Visio file."
+                                        },
+                                        {
+                                          "id": "3491d468-8462-420c-ae89-5ce01c4cea3f",
+                                          "key": "page-id",
+                                          "value": "<string>",
+                                          "description": "(Required) The ID of the page."
+                                        }
+                                      ]
+                                    },
+                                    "description": "Retrieve a specific page from the Visio document."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "64786754-74d0-4c8d-9d64-9a687e0ac0f8",
+                                      "name": "Page returned successfully.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages/:page-id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "me",
+                                            "drive",
+                                            "items",
+                                            ":item-id",
+                                            "workbook",
+                                            "pages",
+                                            ":page-id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "item-id"
+                                            },
+                                            {
+                                              "key": "page-id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"index\": \"<integer>\",\n  \"height\": \"<double>\",\n  \"width\": \"<double>\"\n}",
+                                      "createdAt": "2026-07-28T02:12:51.000Z",
+                                      "updatedAt": "2026-07-28T02:12:51.000Z",
+                                      "uid": "35240-64786754-74d0-4c8d-9d64-9a687e0ac0f8"
+                                    },
+                                    {
+                                      "id": "6c9ca62f-bf7d-4dd7-91d9-a380fca96233",
+                                      "name": "Unauthorized.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages/:page-id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "me",
+                                            "drive",
+                                            "items",
+                                            ":item-id",
+                                            "workbook",
+                                            "pages",
+                                            ":page-id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "item-id"
+                                            },
+                                            {
+                                              "key": "page-id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Unauthorized",
+                                      "code": 401,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:12:51.000Z",
+                                      "updatedAt": "2026-07-28T02:12:51.000Z",
+                                      "uid": "35240-6c9ca62f-bf7d-4dd7-91d9-a380fca96233"
+                                    },
+                                    {
+                                      "id": "ce9e5add-c3e7-4355-9792-5c1b03ac6214",
+                                      "name": "Page not found.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages/:page-id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "me",
+                                            "drive",
+                                            "items",
+                                            ":item-id",
+                                            "workbook",
+                                            "pages",
+                                            ":page-id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "item-id"
+                                            },
+                                            {
+                                              "key": "page-id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Not Found",
+                                      "code": 404,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:12:51.000Z",
+                                      "updatedAt": "2026-07-28T02:12:51.000Z",
+                                      "uid": "35240-ce9e5add-c3e7-4355-9792-5c1b03ac6214"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T02:12:50.000Z",
+                                  "updatedAt": "2026-07-28T02:12:50.000Z",
+                                  "uid": "35240-d8ec3568-8bef-483a-a062-4fb9896bafbf"
+                                }
+                              ],
+                              "id": "0c19dd25-9e39-48eb-9555-7a5201eacd9d",
+                              "createdAt": "2026-07-28T02:12:50.000Z",
+                              "updatedAt": "2026-07-28T02:12:50.000Z",
+                              "uid": "35240-0c19dd25-9e39-48eb-9555-7a5201eacd9d"
+                            },
+                            {
+                              "name": "Microsoft Visio List Pages",
+                              "id": "4cbff421-b122-4dba-bd6d-ef5276770351",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "me",
+                                    "drive",
+                                    "items",
+                                    ":item-id",
+                                    "workbook",
+                                    "pages"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "77e896c9-fb9f-4e4a-a178-a2e4a24f1bf2",
+                                      "key": "item-id",
+                                      "value": "<string>",
+                                      "description": "(Required) The ID of the Visio file."
+                                    }
+                                  ]
+                                },
+                                "description": "Retrieve a list of pages in the Visio document."
+                              },
+                              "response": [
+                                {
+                                  "id": "2d259d20-6d4c-4d67-8bbf-dbf65d2b62e3",
+                                  "name": "Pages returned successfully.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "me",
+                                        "drive",
+                                        "items",
+                                        ":item-id",
+                                        "workbook",
+                                        "pages"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "item-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"index\": \"<integer>\",\n      \"height\": \"<double>\",\n      \"width\": \"<double>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"index\": \"<integer>\",\n      \"height\": \"<double>\",\n      \"width\": \"<double>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T02:12:51.000Z",
+                                  "updatedAt": "2026-07-28T02:12:51.000Z",
+                                  "uid": "35240-2d259d20-6d4c-4d67-8bbf-dbf65d2b62e3"
+                                },
+                                {
+                                  "id": "95ddb35e-4dd3-4096-91a0-7701774b33f9",
+                                  "name": "Unauthorized.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "me",
+                                        "drive",
+                                        "items",
+                                        ":item-id",
+                                        "workbook",
+                                        "pages"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "item-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Unauthorized",
+                                  "code": 401,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:12:51.000Z",
+                                  "updatedAt": "2026-07-28T02:12:51.000Z",
+                                  "uid": "35240-95ddb35e-4dd3-4096-91a0-7701774b33f9"
+                                },
+                                {
+                                  "id": "035fd5d7-62bf-4e5a-b301-60563a207e3e",
+                                  "name": "Document not found.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/me/drive/items/:item-id/workbook/pages",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "me",
+                                        "drive",
+                                        "items",
+                                        ":item-id",
+                                        "workbook",
+                                        "pages"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "item-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:12:51.000Z",
+                                  "updatedAt": "2026-07-28T02:12:51.000Z",
+                                  "uid": "35240-035fd5d7-62bf-4e5a-b301-60563a207e3e"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:12:50.000Z",
+                              "updatedAt": "2026-07-28T02:12:50.000Z",
+                              "uid": "35240-4cbff421-b122-4dba-bd6d-ef5276770351"
+                            }
+                          ],
+                          "id": "85264406-6bf1-4f85-a1af-6feada78c068",
+                          "createdAt": "2026-07-28T02:12:50.000Z",
+                          "updatedAt": "2026-07-28T02:12:50.000Z",
+                          "uid": "35240-85264406-6bf1-4f85-a1af-6feada78c068"
+                        }
+                      ],
+                      "id": "812dd5bd-8eb4-4eac-b6eb-b76ec77a19c8",
+                      "createdAt": "2026-07-28T02:12:50.000Z",
+                      "updatedAt": "2026-07-28T02:12:50.000Z",
+                      "uid": "35240-812dd5bd-8eb4-4eac-b6eb-b76ec77a19c8"
+                    }
+                  ],
+                  "id": "3d97d246-ede4-4c34-a7bb-c4f28f30dfd5",
+                  "createdAt": "2026-07-28T02:12:50.000Z",
+                  "updatedAt": "2026-07-28T02:12:50.000Z",
+                  "uid": "35240-3d97d246-ede4-4c34-a7bb-c4f28f30dfd5"
+                }
+              ],
+              "id": "132d7d55-b7e0-4f60-a805-4679d45031b3",
+              "createdAt": "2026-07-28T02:12:50.000Z",
+              "updatedAt": "2026-07-28T02:12:50.000Z",
+              "uid": "35240-132d7d55-b7e0-4f60-a805-4679d45031b3"
+            }
+          ],
+          "id": "649673d6-f3ff-4892-bf72-3d91cd135cbe",
+          "createdAt": "2026-07-28T02:12:50.000Z",
+          "updatedAt": "2026-07-28T02:12:50.000Z",
+          "uid": "35240-649673d6-f3ff-4892-bf72-3d91cd135cbe"
+        }
+      ],
+      "id": "bb3eb8b8-696b-41d7-a054-a2577c9a6e58",
+      "createdAt": "2026-07-28T02:12:50.000Z",
+      "updatedAt": "2026-07-28T02:12:50.000Z",
+      "uid": "35240-bb3eb8b8-696b-41d7-a054-a2577c9a6e58"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "Files.Read Files.ReadWrite",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://graph.microsoft.com/v1.0"
+    }
+  ]
+}
