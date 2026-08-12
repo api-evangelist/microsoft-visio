@@ -84,18 +84,6 @@ apis:
     url: examples/visio-graph-api-visio-page-example.json
   - type: Examples
     url: examples/visio-graph-api-visio-shape-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-documents.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-hyperlinks.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shape-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shapes.yaml
 - aid: microsoft-visio:microsoft-visio-documents-api
   name: Microsoft Visio Documents API
   description: Operations for Visio document metadata.
@@ -130,18 +118,6 @@ apis:
     url: examples/visio-graph-api-visio-page-example.json
   - type: Examples
     url: examples/visio-graph-api-visio-shape-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-documents.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-hyperlinks.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shape-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shapes.yaml
 - aid: microsoft-visio:microsoft-visio-hyperlinks-api
   name: Microsoft Visio Hyperlinks API
   description: Operations for reading shape hyperlinks.
@@ -176,18 +152,6 @@ apis:
     url: examples/visio-graph-api-visio-page-example.json
   - type: Examples
     url: examples/visio-graph-api-visio-shape-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-documents.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-hyperlinks.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shape-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shapes.yaml
 - aid: microsoft-visio:microsoft-visio-pages-api
   name: Microsoft Visio Pages API
   description: Operations for managing pages in Visio documents.
@@ -222,18 +186,6 @@ apis:
     url: examples/visio-graph-api-visio-page-example.json
   - type: Examples
     url: examples/visio-graph-api-visio-shape-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-documents.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-hyperlinks.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shape-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shapes.yaml
 - aid: microsoft-visio:microsoft-visio-shape-data-api
   name: Microsoft Visio Shape Data API
   description: Operations for reading shape data items.
@@ -268,18 +220,6 @@ apis:
     url: examples/visio-graph-api-visio-page-example.json
   - type: Examples
     url: examples/visio-graph-api-visio-shape-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-documents.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-hyperlinks.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shape-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shapes.yaml
 - aid: microsoft-visio:microsoft-visio-shapes-api
   name: Microsoft Visio Shapes API
   description: Operations for managing shapes on pages.
@@ -314,18 +254,6 @@ apis:
     url: examples/visio-graph-api-visio-page-example.json
   - type: Examples
     url: examples/visio-graph-api-visio-shape-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/graph-comments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-documents.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-hyperlinks.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-pages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shape-data.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/graph-shapes.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/microsoft-visio/overview
