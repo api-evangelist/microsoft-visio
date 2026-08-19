@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Graph Visio Comments Shape Data API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+      "accessTokenUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shape Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Microsoft Visio List Shape Data Items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/me/drive/items/:item-id/workbook/pages/:page-id/shapes/:shape-id/shapeDataItems",
+            "params": [
+              {
+                "name": "item-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Visio file."
+              },
+              {
+                "name": "page-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the page."
+              },
+              {
+                "name": "shape-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the shape."
+              }
+            ]
+          },
+          "docs": "Retrieve data items associated with a shape."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
