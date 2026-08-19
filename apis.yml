@@ -21,7 +21,7 @@ url: https://raw.githubusercontent.com/api-evangelist/microsoft-visio/refs/heads
 humanURL: https://www.microsoft.com/en-us/microsoft-365/visio/microsoft-visio-plans-and-pricing-compare-visio-options
 created: '2024'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 type: Index
 tags:
 - Business Process
