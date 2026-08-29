@@ -19,6 +19,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "microsoft-visio-comments-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "microsoft-visio-documents-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "microsoft-visio-hyperlinks-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "microsoft-visio-pages-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "microsoft-visio-shape-data-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "microsoft-visio-shapes-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }
